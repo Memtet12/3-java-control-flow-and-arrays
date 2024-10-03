@@ -13,6 +13,18 @@ public class Task12Main {
 
     static void selectionSort(int[] arr) {
         //todo напишите здесь свою корректную реализацию этого метода, вместо существующей
+        if (arr == null || arr.length == 0) return;
+        for (int j = 0; j < arr.length; j++) {
+            int minValue = Integer.MAX_VALUE;
+            int index = 0;
+            for (int i = j; i < arr.length; i++) {
+                minValue = Math.min(minValue, arr[i]);
+                if (minValue == arr[i]) index = i;
+            }
+            int temp;
+            temp = arr[j];
+            arr[j] = arr[index];
+            arr[index] = temp;
+        }
     }
-
 }
